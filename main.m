@@ -16,3 +16,13 @@ dy2 = ImplEuler(@func, t, h, x0);
 figure('Name','Implicit Euler');
 title('Implicit Euler')
 plot(t, dy2)
+
+dy3 = symplecticEuler(@func, t, h, x0);
+figure('Name','Symplectic Euler');
+title('Symplectic Euler')
+plot(t, dy3)
+
+dy4 = StormerVerlet(@func, t, h, x0);
+figure('Name','Stormer-Verlet method');
+title('Stormer-Verlet method')
+plot(t, dy4)

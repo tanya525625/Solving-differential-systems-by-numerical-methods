@@ -1,12 +1,14 @@
 span_start = 0;
 span_end = 100;
+neg_span_start = -100
+neg_
 count = 1000;
 h = (span_end-span_start)/count;
-t = span_start:h:span_end;
+t = a:h:b;
 approx_init_1 = 1;
 approx_init_2 = 0;
 x0 = [approx_init_1, approx_init_2];
-retarded_t = neg_span_start:h:neg_span_end;
+retarded_t = 
 
 dy1 = ExplEuler(@func, t, h, x0);
 figure('Name','Explicit Euler');

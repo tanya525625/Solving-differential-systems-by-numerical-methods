@@ -9,6 +9,6 @@ function y = ImplEuler(f, t, h, x0)
     end
 end
 
-function y = implFunc(yn, ynn, h, f)
-    y = yn + h*f(ynn)-ynn;
+function delta = implFunc(yn, ynn, h, f)
+    delta = yn + h*f(ynn) - ynn;
 end

@@ -12,6 +12,8 @@ dy1 = ExplEuler(@func, t, h, x0);
 figure('Name','Explicit Euler');
 title('Explicit Euler')
 plot(t, dy1)
+plot(t, sin(t))
+plot(t, cos())
 
 dy2 = ImplEuler(@func, t, h, x0);
 figure('Name','Implicit Euler');
@@ -21,19 +23,10 @@ plot(t, dy2)
 
 dy3 = symplecticEuler(@func, t, h, x0);
 figure('Name','Symplectic Euler');
-hold on;
-grid on;
 title('Symplectic Euler')
 plot(t, dy3)
-plot(t, sin(t), '--')
-plot(t, cos(t), '--')
 
 dy4 = StormerVerlet(@func, t, h, x0);
 figure('Name','Stormer-Verlet method');
-
-hold on;
-grid on;
 title('Stormer-Verlet method')
 plot(t, dy4)
-plot(t, sin(t), '--')
-plot(t, cos(t), '--')

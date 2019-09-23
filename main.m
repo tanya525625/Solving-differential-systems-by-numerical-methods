@@ -6,6 +6,7 @@ t = span_start:h:span_end;
 approx_init_1 = 1;
 approx_init_2 = 0;
 x0 = [approx_init_1, approx_init_2];
+retarded_t = neg_span_start:h:neg_span_end;
 
 
 dy1 = ExplEuler(@func, t, h, x0);

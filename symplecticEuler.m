@@ -1,4 +1,4 @@
-function y = symplecticEuler(f, t, h, x0)
+function y = symplecticEuler(obj)
     y = zeros(2, length(t));
     y(1, 1) = x0(1);
     y(2, 1) = x0(2);

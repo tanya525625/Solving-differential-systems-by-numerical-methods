@@ -4,7 +4,7 @@ count = 100;
 approx_init_1 = 1;
 approx_init_2 = 0;
 investigated_func = @func;
-t_retarded = 0
+t_retarded = 0;
 
 
 diffEq1 = SolveDiffEq(span_start, span_end, count, t_retarded, approx_init_1,... 

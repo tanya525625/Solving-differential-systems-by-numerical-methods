@@ -11,36 +11,20 @@ diffEq1 = SolveDiffEq(span_start, span_end, count, approx_init_1,...
                   
 
 dy1 = diffEq1.ExplEuler;
-figure('Name','Explicit Euler');
-hold on;
-grid on;
-title('Explicit Euler')
-plot(diffEq1.timespan, dy1)   
+make_plot(diffEq1.timespan, dy1, 'Explicit Euler')
 
 
 dy2 = diffEq1.ImplEuler;
-figure('Name','Implicit Euler');
-hold on;
-grid on;
-title('Implicit Euler')
-plot(diffEq1.timespan, dy2)
+make_plot(diffEq1.timespan, dy2, 'Implicit Euler')
 
 
 dy3 = diffEq1.symplecticEuler;
-figure('Name','Symplectic Euler');
-hold on;
-grid on;
-title('Symplectic Euler')
+make_plot(diffEq1.timespan, dy3, 'Symplectic Euler')
 plot(diffEq1.timespan, sin(diffEq1.timespan), '--')
 plot(diffEq1.timespan, cos(diffEq1.timespan), '--')
-plot(diffEq1.timespan, dy3)
 
 
 dy4 = diffEq1.StormerVerlet;
-figure('Name','Stormer-Verlet method');
-hold on;
-grid on;
-title('Stormer-Verlet method')
+make_plot(diffEq1.timespan, dy4, 'Stormer-Verlet method')
 plot(diffEq1.timespan, sin(diffEq1.timespan), '--')
 plot(diffEq1.timespan, cos(diffEq1.timespan), '--')
-plot(diffEq1.timespan, dy4)

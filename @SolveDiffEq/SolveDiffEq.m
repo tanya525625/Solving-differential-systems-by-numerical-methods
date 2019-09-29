@@ -21,14 +21,16 @@ classdef SolveDiffEq
       retarded_func
       timespan_length
       t_retarded
+      history_func 
    end
    methods   
        function obj = SolveDiffEq(span_start, span_end, count, const,...
                                   approx_init_1, approx_init_2, func, ...
-                                  args_count, retarded_func)
+                                  args_count, retarded_func, history_func)
             obj.h = (span_end - span_start) / count;
             obj.approx_init = [approx_init_1, approx_init_2];
             obj.func = func;
+            obj.history_func = history_func;
             obj.retarded_func = retarded_func;
             obj.timespan = span_start:obj.h:span_end;
             obj.timespan_length = length(obj.timespan)

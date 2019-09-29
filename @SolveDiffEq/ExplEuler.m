@@ -7,15 +7,15 @@ function y = ExplEuler(obj)
         z(:, 1) = obj.func(y(:, n));
         delay = T(n) - obj.t_retarded;
         next_t_ind = find(T > delay, 1);
-        if next_t_ind == 1
-            z(:, 2) = obj.func(y(:, n));
+        if obj.timespan(n) - obj.t_retarded <= 0
+            %z(:, 1) = obj.func(y(:, n));
+            y(:, n+1) = obj.history_func(obj.timespan(n));
         else
             prev_t_ind = next_t_ind - 1;
             next_t = obj.timespan(next_t_ind);
             prev_t = obj.timespan(prev_t_ind);
-            yn = y(:, prev_t_ind);
+            yn = y(:, prev_t_ind)
             ynn = y(:, next_t_ind);
-            z(:, 1) = obj.func(yn)
             
             %TO DO: delays cycle
             delay_number = 1;
@@ -25,9 +25,9 @@ function y = ExplEuler(obj)
                                                    next_t, ... 
                                                    obj.func(yn), ... 
                                                    obj.func(ynn));
-                                               
+                         
+             y(:, n+1) = y(:, n) + obj.h*obj.retarded_func(z);                                   
         end
-       
-        y(:, n+1) = y(:, n) + obj.h*obj.retarded_func(z);
+        
     end
 end

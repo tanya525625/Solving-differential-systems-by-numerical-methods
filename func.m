@@ -1,3 +1,3 @@
-function dy = func(y)
-    dy = [-y(2); y(1)];
+function dy = func(z)
+    dy = [-z(2, 1); z(1, 1)];
 end

@@ -1,4 +1,4 @@
-classdef SolveDiffEq
+classdef SolveDelayODE
     %{
         Class for solving differential equans
     
@@ -24,7 +24,7 @@ classdef SolveDiffEq
       history_func 
    end
    methods   
-       function obj = SolveDiffEq(span_start, span_end, count, const,...
+       function obj = SolveDelayODE(span_start, span_end, count, const,...
                                   approx_init_1, approx_init_2,...
                                   args_count, retarded_func, history_func)
             obj.h = (span_end - span_start) / count;

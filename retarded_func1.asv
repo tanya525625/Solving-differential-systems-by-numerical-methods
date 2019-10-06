@@ -1,3 +1,0 @@
-function dy = retarded_func1(y, z)
-    dy = [-z(2, 1); y(1, 1)];
-end

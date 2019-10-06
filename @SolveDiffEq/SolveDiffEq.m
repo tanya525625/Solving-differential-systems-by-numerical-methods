@@ -20,16 +20,15 @@ classdef SolveDiffEq
       func
       retarded_func
       timespan_length
-      t_retarded
+      delay
       history_func 
    end
    methods   
        function obj = SolveDiffEq(span_start, span_end, count, const,...
-                                  approx_init_1, approx_init_2, func, ...
+                                  approx_init_1, approx_init_2,...
                                   args_count, retarded_func, history_func)
             obj.h = (span_end - span_start) / count;
             obj.approx_init = [approx_init_1, approx_init_2];
-            obj.func = func;
             obj.history_func = history_func;
             obj.retarded_func = retarded_func;
             obj.timespan = span_start:obj.h:span_end;
@@ -37,7 +36,7 @@ classdef SolveDiffEq
             obj.y = zeros(2, obj.timespan_length);
             obj.y(1, 1) = obj.approx_init(1);
             obj.y(2, 1) = obj.approx_init(2);
-            obj.t_retarded = const
+            obj.delay = const
             obj.args_count = args_count
        end
        y = symplecticEuler(obj);

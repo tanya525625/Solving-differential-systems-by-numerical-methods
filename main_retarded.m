@@ -1,5 +1,5 @@
 span_start = 0;
-span_end = 25;
+span_end = 40;
 count = 500;
 approx_init_1 = 1;
 approx_init_2 = 0;
@@ -23,7 +23,7 @@ dy3 = diffEq1.symplecticEuler;
 make_plot(diffEq1.timespan, dy3, 'Symplectic Euler')
 % plot(diffEq1.timespan, sin(diffEq1.timespan), '--')
 % plot(diffEq1.timespan, cos(diffEq1.timespan), '--')
-% 
+
 dy4 = diffEq1.StormerVerlet;
 make_plot(diffEq1.timespan, dy4, 'Stormer-Verlet method')
 % plot(diffEq1.timespan, sin(diffEq1.timespan), '--')

@@ -2,7 +2,7 @@ function y = ImplEuler(obj)
     y = obj.y;
     bounds = [obj.timespan(1); obj.timespan(end)];
     for n=1:length(y)-1
-        z = find_retarded_t(obj, y, n);
+        z = find_retarded_t(obj, y, n+1);
         fun = @(x)implFunc(y, x, obj, z, n);
         y(:, n+1) = fsolve(fun, bounds);
     end

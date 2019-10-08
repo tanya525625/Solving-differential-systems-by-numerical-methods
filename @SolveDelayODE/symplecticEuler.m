@@ -1,12 +1,12 @@
 function y = symplecticEuler(obj)
     y = obj.y;
-    is_delayed = 1;
+    is_explicit = 1;
     bounds = [obj.timespan(1); obj.timespan(end)];
     for n=1:obj.timespan_length-1
-        is_delayed = not(is_delayed);
+        is_explicit = not(is_explicit);
         z_n = find_retarded_t(obj, y, n);
         z_nn = find_retarded_t(obj, y, n+1);
-        fun = @(x)symplFunc(y(:, n), x, obj, z_n, z_nn, is_delayed);
+        fun = @(x)symplFunc(y(:, n), x, obj, z_n, z_nn, is_explicit);
         y(:, n+1) = fsolve(fun, bounds);
     end
 end

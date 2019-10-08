@@ -11,9 +11,9 @@ function y = symplecticEuler(obj)
     end
 end
 
-function delta = symplFunc(yn, ynn, obj, z_n, z_nn, is_delayed)
-    fyn = obj.retarded_func(yn, is_delayed*z_n + not(is_delayed)*z_nn);
-    fynn = obj.retarded_func(ynn, is_delayed*z_nn + not(is_delayed)*z_n);
+function delta = symplFunc(yn, ynn, obj, z_n, z_nn, is_explicit)
+    fyn = obj.retarded_func(yn, is_explicit*z_n + not(is_explicit)*z_nn);
+    fynn = obj.retarded_func(ynn, is_explicit*z_nn + not(is_explicit)*z_n);
     delta(1) = yn(1) + obj.h*fynn(1) - ynn(1);
     delta(2) = yn(2) + obj.h*fyn(2) - ynn(2);
 end

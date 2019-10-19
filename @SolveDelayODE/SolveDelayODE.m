@@ -25,8 +25,8 @@ classdef SolveDelayODE
    end
    methods   
        function obj = SolveDelayODE(span_start, span_end, count, const,...
-                                  approx_init_1, approx_init_2,...
-                                  args_count, retarded_func, history_func)
+                                    approx_init_1, approx_init_2,...
+                                    args_count, retarded_func, history_func)
             obj.h = (span_end - span_start) / count;
             obj.approx_init = [approx_init_1, approx_init_2];
             obj.history_func = history_func;
@@ -43,6 +43,7 @@ classdef SolveDelayODE
        y = ExplEuler(obj);
        y = ImplEuler(obj);
        y = StormerVerlet(obj);
+       y = trapezoid_method(obj);
    end
 end
 

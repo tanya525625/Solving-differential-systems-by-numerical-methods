@@ -5,7 +5,7 @@ approx_init_1 = 1;
 approx_init_2 = 0;
 history_func = @history_func
 retarded_func = @retarded_func1
-t_retarded = 2*pi;
+t_retarded = pi/2;
 args_count = 2;
 
 

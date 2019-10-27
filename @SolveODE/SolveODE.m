@@ -20,7 +20,7 @@ classdef SolveODE
    end
    methods   
        function obj = SolveODE(span_start, span_end, count,...
-                                  approx_init_1, approx_init_2, func)
+                               approx_init_1, approx_init_2, func)
             obj.h = (span_end - span_start) / count;
             obj.func = func;
             obj.timespan = span_start:obj.h:span_end;
@@ -33,6 +33,7 @@ classdef SolveODE
        y = ExplEuler(obj);
        y = ImplEuler(obj);
        y = StormerVerlet(obj);
+       y = trapezoid_method(obj);
    end
 end
 

@@ -1,11 +1,10 @@
 function y = StormerVerlet(obj)
     y = obj.y;
-    bounds = [obj.timespan(1); obj.timespan(end)];
     for n=1:obj.timespan_length-1
         z_n = find_retarded_t(obj, y, n);
         z_nn = find_retarded_t(obj, y, n+1);
         fun = @(x)StormerFunc(y(:, n), x, obj, z_n, z_nn);
-        y(:, n+1) = fsolve(fun, bounds);
+        y(:, n+1) = fsolve(fun, y(:, n));
     end
 end
 

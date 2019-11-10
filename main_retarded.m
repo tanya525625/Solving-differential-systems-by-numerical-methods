@@ -21,10 +21,10 @@ diffEq2 = SolveDelayODE(span_start, span_end, count, t_retarded, approx_init,...
                         args_count, inv_func2,...
                         @history_scalar);
                   
-dy1 = diffEq2.ExplEuler;
+dy1 = diffEq1.ExplEuler;
 show_plots_for_method(diffEq1.timespan, dy1, 'Explicit Euler')
 
-dy2 = diffEq2.ImplEuler;
+dy2 = diffEq1.ImplEuler;
 show_plots_for_method(diffEq1.timespan, dy2, 'Implicit Euler')
 
 % dy3 = diffEq2.symplecticEuler;
@@ -33,5 +33,5 @@ show_plots_for_method(diffEq1.timespan, dy2, 'Implicit Euler')
 % dy4 = diffEq2.StormerVerlet;
 % show_plots_for_method(diffEq1.timespan, dy4, 'Stormer-Verlet method')
 
-dy5 = diffEq2.trapezoid_method;
+dy5 = diffEq1.trapezoid_method;
 show_plots_for_method(diffEq1.timespan, dy5, 'Trapezoid method');
